@@ -1,6 +1,7 @@
 <?php
 
 $to = 'carsmailmsk@gmail.com';
+// $to = 'dizzzaster@gmail.com';
 $title = 'Заказ с сайта';
 $header = 'From: noreply@creativearsolutions.com';
 
@@ -18,6 +19,9 @@ $email = urldecode($email);
 $login = trim($login);
 $phone = trim($phone);
 $email = trim($email);
+$login = stripslashes($login);
+$phone = stripslashes($phone);
+$email = stripslashes($email);
 
 $message = "
 Имя: $login
