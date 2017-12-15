@@ -2,9 +2,9 @@
 
 $to = 'dizzzaster@gmail.com';
 $title = 'Заказ с сайта';
-$header = 'From: noreply@creativearsolutions.com\r\n';
+$header = 'From: noreply@creativearsolutions.com';
 
-// TODO: нужна проверка данных, иначе сервак похакають
+// TODO: Enhance validation
 $login = $_POST['login'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
@@ -30,8 +30,7 @@ Email: $email
 ";
 
 $res = mail($to, $title, $message, $header);
-
-header(sprintf('Location: /?mail=%s', $res ? 'success' : 'failed');
+header(sprintf('Location: /?mail=%s', $res ? 'success' : 'failed'));
 
 // <?
 
