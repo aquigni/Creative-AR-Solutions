@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Creative Augmented Reality Solutions">
     <meta name="keywords" content="Creative, Augmented Reality, AR, VR">
@@ -30,16 +30,15 @@
                     <div>
                         <a class='cross close' href='#'>╳</a>
                     </div>
-                    <div class="popup-title">
-                        ОБРАТНАЯ СВЯЗЬ
-                    </div>
-                    <div class="popup-text">
-                        ЗАПОЛНИТЕ ДАННУЮ ФОРМУ, И&nbsp;НАШ&nbsp;СПЕЦИАЛИСТ СВЯЖЕТСЯ С&nbsp;ВАМИ В&nbsp;БЛИЖАЙШЕЕ ВРЕМЯ
-                    </div>
-                    <form action="/send.php" method="post">
-                        <input class='login-field' type="text" autofocus maxlength='30' name="login" placeholder="Ваше имя" required=""> 
-                        <input class='phone-field' type="tel" autofocus maxlength='12' pattern="^\d{12}$" name="phone" placeholder="Ваш телефон" required=""><br>
-                        <input class='email-field' type="email" autofocus maxlength='30' name="email" placeholder="Ваш Email" required=""><br>
+                    <div class="popup-title">ОБРАТНАЯ СВЯЗЬ</div>
+                    <div class="popup-text">ЗАПОЛНИТЕ ДАННУЮ ФОРМУ, И&nbsp;НАШ&nbsp;СПЕЦИАЛИСТ СВЯЖЕТСЯ С&nbsp;ВАМИ В&nbsp;БЛИЖАЙШЕЕ ВРЕМЯ</div>
+                    <form action="/cgi/send.php" method="post">
+                        <input class='login-field' type="text" autofocus maxlength='30' name="login" placeholder="Ваше имя" required="">
+                        <span class="validity"></span>
+                        <input class='phone-field' type="tel" autofocus maxlength='12' pattern="(\+?\d[- .]*){7,13}" name="phone" placeholder="Ваш телефон" required="">
+                        <span class="validity"></span>
+                        <input class='email-field' type="email" autofocus pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" name="email" placeholder="Ваш Email" required="">
+                        <span class="validity"></span>
                         <textarea name="message" cols="40" rows="6" placeholder="Комментарий"></textarea>
                         <input type="submit" class="popup-btn" name="submit" value="ОТПРАВИТЬ">
                     </form>
