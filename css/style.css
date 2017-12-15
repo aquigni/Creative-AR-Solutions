@@ -113,10 +113,15 @@ section {
     display: block;
 }
 
+
+/********************************
+* Code       					*
+*********************************/
+
 html,
 body {
     height: 100%;
-    overflow: hidden;    
+    overflow: hidden;
     -webkit-overflow-scrolling: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -192,7 +197,7 @@ a:-webkit-any-link {
 }
 
 h1 {
-
+    font-size: calc(3.3vw + 3.2vh);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -312,6 +317,7 @@ a:hover .push {
     border: none;
 }
 
+
 /* .btnback {
     display: block;
     color: #ffffff41;
@@ -327,6 +333,7 @@ input.popup-btn:hover {
     background-color: #37b0e9;
     cursor: pointer;
 }
+
 
 /* input.btnback:hover {
     color: #ffffff;
@@ -362,13 +369,16 @@ a svg #logobg {
 }
 
 
-/* Form */
+/********************************
+* Form         					*
+*********************************/
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
     color: #1a54707f;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    text-align: center;
 }
 
 input:-moz-placeholder,
@@ -376,25 +386,23 @@ textarea:-moz-placeholder {
     color: #1a54707f;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .feedback-popup {
     background: #e0e9edf2;
-    /* background: #e0e9ed; */
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
     display: none;
-    position: absolute;
-    top: 50px;
-    font-family: inherit;
-    left: 50%;
-    margin-left: -230px;
-    width: 460px;
-    min-height: 300px;
+    position: relative;
+    margin: 0 auto;
+    top: calc(-20vw - 25vh);
+    width: 95vw;
+    max-width: 460px;
     z-index: 100;
-    padding: 30px 40px;
+    padding: 2.5em;
     box-sizing: border-box;
 }
 
@@ -420,17 +428,16 @@ form {
 }
 
 .popup-title {
-    font-size: 30px;
-    line-height: 42px;
-    margin-bottom: 10px;
+    font-size: calc(3.5vh + 16vw/9 - 2vw);
+    margin: .5em auto;
     color: #1a5470;
     letter-spacing: 0.05em;
 }
 
 .popup-text {
-    font-size: 14px;
-    line-height: 24px;
-    margin-bottom: 15px;
+    font-size: calc(2vh + 16vw/9 - 2vw);
+    line-height: 1.8em;
+    margin-bottom: 1em;
     color: #1a5470;
     letter-spacing: 0.02em;
 }
@@ -442,21 +449,21 @@ textarea {
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
-    /* height: 35px; */
-    font-size: 14px;
+    font-size: calc(2vh + 16vw/9 - 2vw);
     color: #1a5470;
     letter-spacing: 0.02em;
-    line-height: 35px;
+    line-height: 3em;
+    margin: .5em auto;
     position: relative;
-    padding: 0 30px 0 15px;
-    margin-bottom: 15px;
+    /* padding: 0 30px 0 15px; */
     resize: none;
     font-family: inherit;
     background-color: transparent;
     text-align: center;
     border: none;
     outline: none;
-    box-shadow: inset 0px -1px 0 0px #37b0e9;
+    overflow: overlay;
+    box-shadow: 0px 1px 0 0px #37b0e9;
 }
 
 .feedback-popup input[type="text"],
@@ -469,14 +476,27 @@ textarea {
 .feedback-popup input[type="tel"]:focus,
 .feedback-popup input[type="email"]:focus,
 textarea:focus {
-    box-shadow: inset 0px -3px 0 0px #37b0e9;
+    box-shadow: 0px 3px 0 0px #37b0e9;
     transition: all 0.3s;
 }
 
 textarea {
-    height: 80px;
-    padding: 5px 30px 0 15px;
+    text-align: left;
+    height: 7em;
+    /* padding: 5px 30px 0 15px; */
+    line-height: 1.8em;
 }
+
+textarea::-webkit-scrollbar {
+    background-color: transparent;
+    width: 6px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: #1a547026;
+    border-radius: 10px;
+}
+
 
 /* .popup-btn {
     display: inline-block;
@@ -496,11 +516,11 @@ textarea {
 
 a.cross {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
     font-size: 20px;
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    /* width: 30px;
+    height: 30px; */
     color: #1a5470;
 }
