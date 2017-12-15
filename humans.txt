@@ -1,0 +1,23 @@
+/* TEAM */
+Developer: Alexander Ulanovsky
+Site: https://a-u.me
+Location: Moscow, Russia
+
+Design, management: Sergey Chernov
+Location: Moscow, Russia
+
+
+
+/* THANKS */
+Xenia Pavlyuchenko
+Location: Moscow, Russia
+
+Dmitry Nezhelskoy
+Site: http://nezhelskoy.pro
+Location: Volgograd, Russia
+
+
+
+/* SITE */
+Standards: PHP7, HTML5, CSS3
+Components:jQuery
