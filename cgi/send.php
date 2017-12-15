@@ -1,7 +1,6 @@
 <?php
 
 $to = 'carsmailmsk@gmail.com';
-// $to = 'dizzzaster@gmail.com';
 $title = 'Заказ с сайта';
 $header = 'From: noreply@creativearsolutions.com';
 
@@ -32,10 +31,5 @@ Email: $email
 
 $res = mail($to, $title, $message, $header);
 header(sprintf('Location: /?mail=%s', $res ? 'success' : 'failed'));
-
-// <?
-
-//  echo  mail ("my_exist@gmail.com","test message",
-//              "test message","From:no-reply@gmail.com");
 
 ?>
