@@ -21,15 +21,17 @@
     <style>
         /* body:before will also work
          as will body:after */
-        :root:before {
-          content: url(img/bg.jpg);
-          /* partial fallback */
-          background-image: url(img/bg.jpg);
-          visibility: hidden;
-          position: absolute;
-          left: -999em;
+
+         :root:before {
+            content: url(img/bg.jpg);
+            /* partial fallback */
+            background-image: url(img/bg.jpg);
+            visibility: hidden;
+            position: absolute;
+            left: -999em;
         }
-        </style>
+
+    </style>
 </head>
 
 <body style="position: fixed;">
@@ -175,53 +177,53 @@
 
     </script>
     <script>
-            // This is high-level function; REPLACE IT WITH YOUR CODE.
-            // It must react to delta being more/less than zero.
-            function handle(delta) {
+        // This is high-level function; REPLACE IT WITH YOUR CODE.
+        // It must react to delta being more/less than zero.
+        function handle(delta) {
+            if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
                 if (delta < 0)
                     window.location.href = 'https://creativearsolutions.com';
-    
-                // else
-    
+            } else if (delta > 0)
+                window.location.href = 'https://creativearsolutions.com';
+        }
+
+        function wheel(event) {
+            var delta = 0;
+            if (!event) /* For IE. */
+                event = window.event;
+            if (event.wheelDelta) { /* IE/Opera. */
+                delta = event.wheelDelta / 120;
+            } else if (event.detail) { /** Mozilla case. */
+                // In Mozilla, sign of delta is different than in IE.
+                // Also, delta is multiple of 3.
+
+                delta = -event.detail / 3;
             }
-    
-            function wheel(event) {
-                var delta = 0;
-                if (!event) /* For IE. */
-                    event = window.event;
-                if (event.wheelDelta) { /* IE/Opera. */
-                    delta = event.wheelDelta / 120;
-                } else if (event.detail) { /** Mozilla case. */
-                    // In Mozilla, sign of delta is different than in IE.
-                    // Also, delta is multiple of 3.
-    
-                    delta = -event.detail / 3;
-                }
-                // If delta is nonzero, handle it.
-                // Basically, delta is now positive if wheel was scrolled up,
-                // and negative, if wheel was scrolled down.
-    
-                if (delta)
-                    handle(delta);
-                // Prevent default actions caused by mouse wheel.
-                // That might be ugly, but we handle scrolls somehow
-                // anyway, so don't bother here.
-    
-                if (event.preventDefault)
-                    event.preventDefault();
-                event.returnValue = false;
-            }
-    
-            // Initialization code. 
-            // If you use your own event management code, change it as required.
-    
-            if (window.addEventListener)
-                // DOMMouseScroll is for mozilla.
-                window.addEventListener('DOMMouseScroll', wheel, false);
-            // IE/Opera.
-            window.onmousewheel = document.onmousewheel = wheel;
-    
-        </script>
+            // If delta is nonzero, handle it.
+            // Basically, delta is now positive if wheel was scrolled up,
+            // and negative, if wheel was scrolled down.
+
+            if (delta)
+                handle(delta);
+            // Prevent default actions caused by mouse wheel.
+            // That might be ugly, but we handle scrolls somehow
+            // anyway, so don't bother here.
+
+            if (event.preventDefault)
+                event.preventDefault();
+            event.returnValue = false;
+        }
+
+        // Initialization code. 
+        // If you use your own event management code, change it as required.
+
+        if (window.addEventListener)
+            // DOMMouseScroll is for mozilla.
+            window.addEventListener('DOMMouseScroll', wheel, false);
+        // IE/Opera.
+        window.onmousewheel = document.onmousewheel = wheel;
+
+    </script>
 
 </body>
 

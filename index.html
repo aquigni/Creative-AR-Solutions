@@ -81,11 +81,11 @@
         // This is high-level function; REPLACE IT WITH YOUR CODE.
         // It must react to delta being more/less than zero.
         function handle(delta) {
-            if (delta > 0)
+            if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+                if (delta > 0)
+                    window.location.href = 'https://creativearsolutions.com/next.html';
+            } else if (delta < 0)
                 window.location.href = 'https://creativearsolutions.com/next.html';
-
-            // else
-
         }
 
         function wheel(event) {
