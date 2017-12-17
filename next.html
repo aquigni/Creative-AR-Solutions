@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" style="position: fixed;">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -9,14 +9,26 @@
     <meta name="keywords" content="Creative, Augmented Reality, AR, VR">
     <meta name="author" content="Creative Augmented Reality Solutions">
     <link type="text/plain" rel="author" href="https://creativearsolutions.com/humans.txt">
+    <link rel="preload" href="img/bg.jpg" as="image">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="prefetch" href="img/bg.jpg">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
     <!--   <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
     <title>Creative Augmented Reality Solutions</title>
+    <style>
+        /* body:before will also work
+         as will body:after */
+        :root:before {
+          content: url(img/bg.jpg);
+          /* partial fallback */
+          background-image: url(img/bg.jpg);
+          visibility: hidden;
+          position: absolute;
+          left: -999em;
+        }
+        </style>
 </head>
 
-<body>
+<body style="position: fixed;">
     <div class="base">
         <div class="noanim">
         </div>
