@@ -48,9 +48,9 @@
                     <form action="/cgi/send.php" method="post">
                         <input class='login-field' type="text" autofocus maxlength='30' name="login" placeholder="Ваше имя" required="">
                         <span class="validity"></span>
-                        <input class='phone-field' type="tel" autofocus maxlength='12' pattern="(\+?\d[- .]*){7,13}" name="phone" placeholder="Ваш телефон" required="">
+                        <input class='phone-field' type="tel" maxlength='12' pattern="(\+?\d[- .]*){7,13}" name="phone" placeholder="Ваш телефон" required="">
                         <span class="validity"></span>
-                        <input class='email-field' type="email" autofocus pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" name="email" placeholder="Ваш Email" required="">
+                        <input class='email-field' type="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" name="email" placeholder="Ваш Email" required="">
                         <span class="validity"></span>
                         <textarea name="message" cols="40" rows="6" placeholder="Комментарий"></textarea>
                         <input type="submit" class="popup-btn" name="submit" value="ОТПРАВИТЬ">
