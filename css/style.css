@@ -118,10 +118,6 @@ section {
 * Code       					*
 *********************************/
 
-html {
-    position: fixed;
-}
-
 html,
 body {
     height: 100%;
