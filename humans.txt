@@ -1,29 +1,29 @@
 /* TEAM */
 
-Developer: Alexander Ulanovsky
-Site: https://a-u.me
-From: Moscow, Russia
+	Developer: Alexander Ulanovsky
+	Site: https://a-u.me
+	From: Moscow, Russia
 
-Design, management: Sergey Chernov
-Site: https://creativearsolutions.com/
-From: Moscow, Russia
+	Design, management: Sergey Chernov
+	Site: https://creativearsolutions.com/
+	From: Moscow, Russia
 
 
 /* THANKS */
 
-Xenia Pavlyuchenko
-Facebook: xxoala
-From: Moscow, Russia
+	Xenia Pavlyuchenko
+	Facebook: xxoala
+	From: Moscow, Russia
 
-Dmitry Nezhelskoy
-Site: https://nezhelskoy.pro
-From: Volgograd, Russia
+	Dmitry Nezhelskoy
+	Site: https://nezhelskoy.pro
+	From: Volgograd, Russia
 
 
 /* SITE */
 
-Last update: 2017/12/15
-Languages: Russian / English
-Standards: PHP7, HTML5, CSS3
-Components: jQuery
-Software: macOS, VS Code
+	Last update: 2017/12/15
+	Languages: Russian / English
+	Standards: PHP7, HTML5, CSS3
+	Components: jQuery
+	Software: macOS, VS Code

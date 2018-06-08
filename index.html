@@ -8,13 +8,36 @@
     <meta name="description" content="Creative Augmented Reality Solutions">
     <meta name="keywords" content="Creative, Augmented Reality, AR, VR">
     <meta name="author" content="Creative Augmented Reality Solutions">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://creativearsolutions.com/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://creativearsolutions.com/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://creativearsolutions.com/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://creativearsolutions.com/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://creativearsolutions.com/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://creativearsolutions.com/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://creativearsolutions.com/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://creativearsolutions.com/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="https://creativearsolutions.com/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="https://creativearsolutions.com/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="https://creativearsolutions.com/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="https://creativearsolutions.com/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="https://creativearsolutions.com/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Creative Augmented Reality Solutions" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="https://creativearsolutions.com/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="https://creativearsolutions.com/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="https://creativearsolutions.com/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="https://creativearsolutions.com/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="https://creativearsolutions.com/mstile-310x310.png" />
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link type="text/plain" rel="author" href="https://creativearsolutions.com/humans.txt">
+    <link rel="preload" href="img/bg.jpg" as="image">
+    <link rel="preload" href="img/bgTree.png" as="image">
+    <link rel="prerender" href="https://creativearsolutions.com/next.html">
     <link rel="prefetch" href="https://creativearsolutions.com/next.html">
-    <link rel="prefetch" href="https://www.youtube.com/embed/oljoP63wzmw">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
-<!--     <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <!--     <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
     <title>Creative Augmented Reality Solutions</title>
 </head>
 
@@ -26,7 +49,6 @@
                 <p>Разработка уникальных приложений
                     <br>с&nbsp;системой Augmented Reality
                     <br>для&nbsp;бизнеса</p>
-                <!-- <a href="next.html" style="display: block;"> -->
                 <a href="next.html">
                     <div class="svg-wrap">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
@@ -44,8 +66,9 @@
         <div class="bgtree"></div>
     </div>
 
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/parallax.js"></script>
-    <script type="text/javascript">
+    <script>
         $(document).ready(function () {
             $(".bg").interactive_bg({
                 strength: 10,
@@ -63,26 +86,63 @@
                 height: $(window).outerHeight()
             })
         })
+
     </script>
-    <script type="text/javascript">
+    <script>
         // Disable scrolling.
-        $(document).ready(function() {
-            document.ontouchmove = function(e){
-                 e.preventDefault();
-                 }
-        });
+        $(document).ready(function () {
+            document.ontouchmove = function (e) {
+                e.preventDefault();
+            }
+        })
 
-        jQuery.event.add(window, "load", resize);
-        jQuery.event.add(window, "resize", resize);
-
-        function resize() {
-            var h = jQuery(window).height();
-            var w = jQuery(window).width();
-            jQuery("body").css({
-                "width": w,
-                "height": h
-            });
+    </script>
+    <script>
+        // This is high-level function; REPLACE IT WITH YOUR CODE.
+        // It must react to delta being more/less than zero.
+        function handle(delta) {
+            if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+                if (delta > 0)
+                    window.location.href = 'https://creativearsolutions.com/next.html';
+            } else if (delta < 0)
+                window.location.href = 'https://creativearsolutions.com/next.html';
         }
+
+        function wheel(event) {
+            var delta = 0;
+            if (!event) /* For IE. */
+                event = window.event;
+            if (event.wheelDelta) { /* IE/Opera. */
+                delta = event.wheelDelta / 120;
+            } else if (event.detail) { /** Mozilla case. */
+                // In Mozilla, sign of delta is different than in IE.
+                // Also, delta is multiple of 3.
+
+                delta = -event.detail / 3;
+            }
+            // If delta is nonzero, handle it.
+            // Basically, delta is now positive if wheel was scrolled up,
+            // and negative, if wheel was scrolled down.
+
+            if (delta)
+                handle(delta);
+            // Prevent default actions caused by mouse wheel.
+            // That might be ugly, but we handle scrolls somehow
+            // anyway, so don't bother here.
+
+            if (event.preventDefault)
+                event.preventDefault();
+            event.returnValue = false;
+        }
+
+        // Initialization code. 
+        // If you use your own event management code, change it as required.
+
+        if (window.addEventListener)
+            // DOMMouseScroll is for mozilla.
+            window.addEventListener('DOMMouseScroll', wheel, false);
+        // IE/Opera.
+        window.onmousewheel = document.onmousewheel = wheel;
 
     </script>
 
