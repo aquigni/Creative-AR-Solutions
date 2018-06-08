@@ -1,0 +1,10 @@
+<?php
+
+return [
+    'orderForm' => [
+        'emailTo' => 'manager@example.net',
+        'emailFrom' => 'noreply@example.com'
+    ],
+];
+
+?>

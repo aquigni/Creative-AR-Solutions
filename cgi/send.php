@@ -1,8 +1,10 @@
 <?php
 
-$to = 'carsmailmsk@gmail.com';
+$config = require '../config.php';
+
+$to = $config['orderForm']['emailTo'];
 $title = 'Заказ с сайта';
-$header = 'From: noreply@creativearsolutions.com';
+$header = sprintf('From: %s', $config['orderForm']['emailFrom']);
 
 // TODO: Enhance validation
 $login = $_POST['login'];
